@@ -23,5 +23,6 @@ jobs:
 
       - name: Build and Push to GHCR
         run: |
-          docker build . --tag ghcr.io/${{ github.repository }}:latest
-          docker push ghcr.io/${{ github.repository }}:latest
+          REPO_LW=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')
+          docker build . --tag ghcr.io/${{ REPO_LW }}:latest
+          docker push ghcr.io/${{ REPO_LW }}:latest
