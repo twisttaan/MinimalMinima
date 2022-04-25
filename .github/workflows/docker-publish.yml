@@ -8,7 +8,7 @@ on:
       - main
 
 jobs:
-  build-and-push-evie:
+  build-and-push:
     runs-on: ubuntu-latest
 
     steps:
