@@ -23,5 +23,5 @@ jobs:
 
       - name: Build and Push to GHCR
         run: |
-          docker build . --tag ghcr.io/${{ github.repository ,, }}:latest
-          docker push ghcr.io/${{ github.repository ,, }}:latest
+          docker build . --tag ghcr.io/${{ github.repository },,}:latest
+          docker push ghcr.io/${{ github.repository },,}:latest
