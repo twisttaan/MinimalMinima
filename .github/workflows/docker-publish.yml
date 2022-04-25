@@ -21,7 +21,13 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Create lowercase image name
+        run: |
+          echo "REPO_LC=${REPO,,}" >>${GITHUB_ENV}
+        env:
+          REPO: "${{ github.repository }}"
+
       - name: Build and Push to GHCR
         run: |
-          docker build . --tag ghcr.io/${{ github.repository },,}:latest
-          docker push ghcr.io/${{ github.repository },,}:latest
+          docker build . --tag ghcr.io/${{ REPO_LC }}:latest
+          docker push ghcr.io/${{ REPO_LC }}:latest
