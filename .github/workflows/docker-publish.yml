@@ -29,5 +29,5 @@ jobs:
 
       - name: Build and Push to GHCR
         run: |
-          docker build . --tag ghcr.io/${{ REPO_LC }}:latest
-          docker push ghcr.io/${{ REPO_LC }}:latest
+          docker build . --tag ghcr.io/$REPO_LC:latest
+          docker push ghcr.io/$REPO_LC:latest
